@@ -69,6 +69,7 @@ typedef enum {
     MRAA_UPXTREME = 24,             /**< The UPXTREME Board */
     MRAA_UPXTREME_I11 = 25,         /**< The UPXTREME i11 Board */
     MRAA_UP2_PRO = 26,              /**< The UP^2 Pro Board */
+    MRAA_UP2_6000 = 27,              /**< The UP^2 6000 Board */
     // USB platform extenders start at 256
     MRAA_FTDI_FT4222 = 256,         /**< FTDI FT4222 USB to i2c bridge */
 

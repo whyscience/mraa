@@ -22,6 +22,7 @@
 #include "x86/up.h"
 #include "x86/up2.h"
 #include "x86/up2_pro.h"
+#include "x86/up2_6000.h"
 #include "x86/intel_joule_expansion.h"
 #include "x86/iei_tank.h"
 #include "x86/intel_adlink_lec_al.h"
@@ -110,6 +111,9 @@ mraa_x86_platform()
             } else if (strncasecmp(line, "UPX-TGL01", strlen("UPX-TGL01") + 1) == 0) {
                 platform_type = MRAA_UPXTREME;
                 plat = mraa_upxtreme_i11_board();
+            } else if (strncasecmp(line, "UPN-EHL01", strlen("UPN-EHL01") + 1) == 0) {
+                platform_type = MRAA_UP2_6000;
+                plat = mraa_up2_6000_board();
             } else {
                 syslog(LOG_ERR, "Platform not supported, not initialising");
                 platform_type = MRAA_UNKNOWN_PLATFORM;
@@ -180,6 +184,8 @@ mraa_x86_platform()
     plat = mraa_upxtreme_board();
     #elif defined(xMRAA_UPXTREME_I11)
     plat = mraa_upxtreme_i11_board();
+    #elif defined(xMRAA_UP2_6000)
+    plat = mraa_up2_6000_board();
     #else
         #error "Not using a valid platform value from mraa_platform_t - cannot compile"
     #endif

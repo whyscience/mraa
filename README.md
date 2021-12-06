@@ -40,6 +40,7 @@ X86
 * [ADLINK IPi-SMARC X86](../master/docs/adlink_ipi_x86.md)
 * [UP Xtreme](../master/docs/up_xtreme.md)
 * [UP Xtreme i11](../master/docs/up_xtreme_i11.md)
+* [UP Squared 6000](../master/docs/up2-6000.md)
 
 ARM
 ---
