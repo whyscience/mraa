@@ -1,8 +1,14 @@
+mraa (2.1.0-4~ubuntu20.04) focal; urgency=medium
+
+  *  upxtreme i11: Add addtional Rpi GPIO mapping
+
+ --  AAEON <aaeon_cm@aaeon.com>  Thu, 24 Jnu 2021 18:59:59 +0000
+
 mraa (2.1.0-3~ubuntu20.04) focal; urgency=medium
 
   * Add Support of UPX-TGL01
 
- --  Tom Ingleby <tom@ewsting.org>  Wed, 29 Apr 2020 18:59:59 +0000
+ --  fankunyang <fankunyang@gmail.com>  Wed, 29 Apr 2020 18:59:59 +0000
 
 mraa (2.1.0-1~ubuntu20.04) focal; urgency=medium
 
