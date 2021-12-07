@@ -27,6 +27,7 @@
 #define SYSFS_CLASS_GPIO "/sys/class/gpio"
 #define MAX_SIZE 64
 #define POLL_TIMEOUT
+#define INIT_WAITING 100
 
 static mraa_result_t
 _mraa_gpio_get_valfp(mraa_gpio_context dev)
@@ -311,6 +312,7 @@ mraa_gpio_init(int pin)
     }
 
     mraa_gpio_context r = mraa_gpio_init_internal(board->adv_func, board->pins[pin].gpio.pinmap);
+    usleep(INIT_WAITING * 1000);
 
     if (r == NULL) {
         return NULL;

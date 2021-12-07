@@ -61,6 +61,9 @@ typedef enum {
     MTK_OMEGA2 = 18,           /**< MT7688 based Onion Omega2 board */
     IEI_TANK = 19,             /**< IEI Tank System*/
     INTEL_UPXTREME = 24,        /**< The UPXTREME Board */
+    INTEL_UPXTREM_I11 = 25,        /**< The UPXTREME i11 Board */
+    INTEL_UP2_PRO = 26,        /**< The UP^2 Pro Board */
+    INTEL_UP2_6000 = 27,        /**< The UP^2 Pro Board */
 
     FTDI_FT4222 = 256,         /**< FTDI FT4222 USB to i2c bridge */
 

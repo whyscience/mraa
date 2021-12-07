@@ -50,6 +50,8 @@ Specific platform information for supported platforms is documented here:
 - @ref nuc5
 - @ref up
 - @ref up2
+- @ref up2_pro
+- @ref up2_6000
 - @ref joule
 - @ref ft4222
 - @ref _96boards
@@ -61,6 +63,7 @@ Specific platform information for supported platforms is documented here:
 - @ref omega2
 - @ref iei-tank
 - @ref upXtreme
+- @ref upXtremeI11
 
 ## DEBUGGING
 
