@@ -18,7 +18,7 @@ extern "C" {
 #include "mraa_internal.h"
 
 // +1 as pins are "1 indexed"
-#define MRAA_UP2_PRO_PINCOUNT    (40 + 1)
+#define MRAA_UP2_PRO_PINCOUNT    (80 + 1)
 
 mraa_board_t*
 mraa_up2_pro_board();
