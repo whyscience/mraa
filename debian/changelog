@@ -1,3 +1,15 @@
+mraa (2.1.0-6~ubuntu20.04) focal; urgency=medium
+
+  *  Add waiting time after exporting GPIO
+
+ --  AAEON <aaeon_cm@aaeon.com>  Wed, 04 Aug 2021 12:00:00 +0800
+
+mraa (2.1.0-5~ubuntu20.04) focal; urgency=medium
+
+  *  Up squared pro: Add support of UPN-APL01
+
+ --  AAEON <aaeon_cm@aaeon.com>  Thu, 19 Jul 2021 15:35:59 +0000
+
 mraa (2.1.0-4~ubuntu20.04) focal; urgency=medium
 
   *  upxtreme i11: Add addtional Rpi GPIO mapping
