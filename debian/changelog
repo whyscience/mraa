@@ -1,3 +1,9 @@
+mraa (2.1.0-8~ubuntu20.04) focal; urgency=medium
+
+  *  UP Square 6000: Define 40 pins in the ExHAT
+
+ --  AAEON <aaeon_cm@aaeon.com>  Tue, 07 Dec 2021 12:00:00 +0800
+
 mraa (2.1.0-7~ubuntu20.04) focal; urgency=medium
 
   *  UP Square 6000: Add UP Squared 6000 support
