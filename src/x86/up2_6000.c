@@ -132,7 +132,7 @@ mraa_up2_6000_board()
     mraa_up2_6000_set_pininfo(b, 13, "GPIO27",    (mraa_pincapabilities_t) {1, 1, 0, 0, 0, 0, 0, 0}, MRAA_UP2_6000_COMMUNITY4_BASE + 11, 3, 11);
     mraa_up2_6000_set_pininfo(b, 14, "GND",       (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
     mraa_up2_6000_set_pininfo(b, 15, "GPIO22",    (mraa_pincapabilities_t) {1, 1, 0, 0, 0, 0, 0, 0}, MRAA_UP2_6000_COMMUNITY4_BASE + 9, 3, 9);
-    mraa_up2_6000_set_pininfo(b, 16, "PWM3",      (mraa_pincapabilities_t) {1, 1, 0, 0, 0, 0, 0, 0}, MRAA_UP2_6000_COMMUNITY4_BASE + 78, 3, 78);
+    mraa_up2_6000_set_pininfo(b, 16, "GPIO19",    (mraa_pincapabilities_t) {1, 1, 0, 0, 0, 0, 0, 0}, MRAA_UP2_6000_COMMUNITY4_BASE + 78, 3, 78);
     mraa_up2_6000_set_pininfo(b, 17, "3.3v",      (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
     mraa_up2_6000_set_pininfo(b, 18, "GPIO24",    (mraa_pincapabilities_t) {1, 1, 0, 0, 0, 0, 0, 0}, MRAA_UP2_6000_COMMUNITY4_BASE + 77, 3, 77);
     mraa_up2_6000_set_pininfo(b, 19, "SPI0_MOSI", (mraa_pincapabilities_t) {1, 1, 0, 0, 1, 0, 0, 0}, MRAA_UP2_6000_COMMUNITY0_BASE + 22, 0, 22);
@@ -157,6 +157,47 @@ mraa_up2_6000_board()
     mraa_up2_6000_set_pininfo(b, 38, "I2S_DIN",   (mraa_pincapabilities_t) {1, 1, 0, 0, 0, 0, 0, 0}, MRAA_UP2_6000_COMMUNITY0_BASE + 56, 0, 56);
     mraa_up2_6000_set_pininfo(b, 39, "GND",       (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
     mraa_up2_6000_set_pininfo(b, 40, "I2S_DOUT",  (mraa_pincapabilities_t) {1, 1, 0, 0, 0, 0, 0, 0}, MRAA_UP2_6000_COMMUNITY0_BASE + 55, 0, 55);
+    // Sub Carrier Board
+    mraa_up2_6000_set_pininfo(b, 41, "5v",        (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 42, "3.3v",      (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 43, "5v",        (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 44, "3.3v",      (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 45, "GND",       (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 46, "GND",       (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 47, "CAN0_TX",   (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 48, "CAN0_RX",   (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 49, "GND",       (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 50, "GND",       (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 51, "CAN1_TX",   (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 52, "CAN1_RX",   (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 53, "GND",       (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 54, "GND",       (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 55, "QEP_A0",    (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 56, "QEP_B0",    (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 57, "QEP_A1",    (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 58, "QEP_B1",    (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 59, "QEP_A2",    (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 60, "QEP_B2",    (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 61, "QEP_A3",    (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 62, "QEP_B3",    (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 63, "QEP_I0",    (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 64, "QEP_I2",    (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 65, "QEP_I1",    (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 66, "QEP_I3",    (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 67, "PWM4",      (mraa_pincapabilities_t) {1, 0, 1, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 68, "PWM2",      (mraa_pincapabilities_t) {1, 0, 1, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 69, "PWM5",      (mraa_pincapabilities_t) {1, 0, 1, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 70, "PWM3",      (mraa_pincapabilities_t) {1, 0, 1, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 71, "GND",       (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 72, "GND",       (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 73, "ADC0",      (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 74, "ADC2",      (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 75, "ADC1",      (mraa_pincapabilities_t) {0, 1, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 76, "ADC3",      (mraa_pincapabilities_t) {1, 1, 0, 0, 0, 0, 0, 1}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 77, "GND",       (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 78, "GND",       (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 79, "I2C2_SDA",  (mraa_pincapabilities_t) {1, 0, 0, 0, 0, 1, 0, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 80, "I2C2_SCL",  (mraa_pincapabilities_t) {1, 0, 0, 0, 0, 1, 0, 0}, -1, -1, -1);
  
     b->i2c_bus_count = 0;
     b->def_i2c_bus = 0;
@@ -184,6 +225,17 @@ mraa_up2_6000_board()
         b->i2c_bus_count++;
     }
 
+    // Configure I2C adaptor #2
+    // (normally reserved for accessing HAT EEPROM)
+    i2c_bus_num = mraa_find_i2c_bus_pci("0000:00", "0000:00:15.2", "i2c_designware.3");
+    if (i2c_bus_num != -1) {
+        int i = b->i2c_bus_count;
+        b->i2c_bus[i].bus_id = i2c_bus_num;
+        mraa_up2_6000_get_pin_index(b, "I2C2_SDA", &(b->i2c_bus[i].sda));
+        mraa_up2_6000_get_pin_index(b, "I2C2_SCL", &(b->i2c_bus[i].scl));
+        b->i2c_bus_count++;
+    }
+
     // Configure PWM
     b->pwm_dev_count = 0;
     b->def_pwm_dev = 0;
@@ -197,6 +249,18 @@ mraa_up2_6000_board()
     b->pwm_dev_count++;
     b->pins[33].pwm.parent_id = 0;
     b->pins[33].pwm.pinmap = 2;
+    b->pwm_dev_count++;
+    b->pins[68].pwm.parent_id = 0;
+    b->pins[68].pwm.pinmap = 3;
+    b->pwm_dev_count++;
+    b->pins[70].pwm.parent_id = 0;
+    b->pins[70].pwm.pinmap = 4;
+    b->pwm_dev_count++;
+    b->pins[66].pwm.parent_id = 0;
+    b->pins[66].pwm.pinmap = 5;
+    b->pwm_dev_count++;
+    b->pins[69].pwm.parent_id = 0;
+    b->pins[69].pwm.pinmap = 6;
     b->pwm_dev_count++;
 
     // Configure SPI
