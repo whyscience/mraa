@@ -90,6 +90,28 @@ mraa_up2_6000_get_pin_index(mraa_board_t* board, char* name, int* pin_index)
     return MRAA_ERROR_INVALID_RESOURCE;
 }
 
+static mraa_result_t
+mraa_up_6000_aio_get_valid_fp(mraa_aio_context dev)
+{
+    char file_path[64] = "";
+
+    /*
+     * Open file Analog device input channel raw voltage file for reading.
+     *
+     * The UP 6000 ADC has only 4 channel, so the channel number is not included
+     * in the filename
+     */
+    snprintf(file_path, 64, "/sys/bus/iio/devices/iio:device0/in_voltage%d_raw", dev->channel);
+    dev->adc_in_fp = open(file_path, O_RDONLY);
+    if (dev->adc_in_fp == -1) {
+        syslog(LOG_ERR, "aio: Failed to open input raw file %s for reading!", file_path);
+        return MRAA_ERROR_INVALID_RESOURCE;
+    }
+
+    return MRAA_SUCCESS;
+}
+
+
 mraa_board_t*
 mraa_up2_6000_board()
 {
@@ -115,6 +137,8 @@ mraa_up2_6000_board()
         free(b->pins);
         goto error;
     }
+
+    b->adv_func->aio_get_valid_fp = &mraa_up_6000_aio_get_valid_fp;
 
     mraa_up2_6000_set_pininfo(b, 0, "INVALID",    (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
     mraa_up2_6000_set_pininfo(b, 1, "3.3v",       (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
@@ -190,10 +214,10 @@ mraa_up2_6000_board()
     mraa_up2_6000_set_pininfo(b, 70, "PWM3",      (mraa_pincapabilities_t) {1, 0, 1, 0, 0, 0, 0, 0}, -1, -1, -1);
     mraa_up2_6000_set_pininfo(b, 71, "GND",       (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
     mraa_up2_6000_set_pininfo(b, 72, "GND",       (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
-    mraa_up2_6000_set_pininfo(b, 73, "ADC0",      (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
-    mraa_up2_6000_set_pininfo(b, 74, "ADC2",      (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
-    mraa_up2_6000_set_pininfo(b, 75, "ADC1",      (mraa_pincapabilities_t) {0, 1, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
-    mraa_up2_6000_set_pininfo(b, 76, "ADC3",      (mraa_pincapabilities_t) {1, 1, 0, 0, 0, 0, 0, 1}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 73, "ADC0",      (mraa_pincapabilities_t) {1, 0, 0, 0, 0, 0, 1, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 74, "ADC2",      (mraa_pincapabilities_t) {1, 0, 0, 0, 0, 0, 1, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 75, "ADC1",      (mraa_pincapabilities_t) {1, 0, 0, 0, 0, 0, 1, 0}, -1, -1, -1);
+    mraa_up2_6000_set_pininfo(b, 76, "ADC3",      (mraa_pincapabilities_t) {1, 0, 0, 0, 0, 0, 1, 0}, -1, -1, -1);
     mraa_up2_6000_set_pininfo(b, 77, "GND",       (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
     mraa_up2_6000_set_pininfo(b, 78, "GND",       (mraa_pincapabilities_t) {0, 0, 0, 0, 0, 0, 0, 0}, -1, -1, -1);
     mraa_up2_6000_set_pininfo(b, 79, "I2C2_SDA",  (mraa_pincapabilities_t) {1, 0, 0, 0, 0, 1, 0, 0}, -1, -1, -1);
@@ -301,8 +325,19 @@ mraa_up2_6000_board()
         b->uart_dev_count++;
     }
 
-    // Configure ADCs
-    b->aio_count = 0;
+    // Configure ADCs 4 channel 12 bit
+    b->aio_count = 4;
+    b->adc_raw = 12;
+    b->adc_supported = 12;
+    b->aio_non_seq = 1;
+    b->pins[73].aio.pinmap = 0;
+    b->pins[75].aio.pinmap = 1;
+    b->pins[74].aio.pinmap = 2;
+    b->pins[76].aio.pinmap = 3;
+    mraa_up2_6000_get_pin_index(b, "ADC0", (int*) &(b->aio_dev[0].pin));
+    mraa_up2_6000_get_pin_index(b, "ADC1", (int*) &(b->aio_dev[1].pin));
+    mraa_up2_6000_get_pin_index(b, "ADC2", (int*) &(b->aio_dev[2].pin));
+    mraa_up2_6000_get_pin_index(b, "ADC3", (int*) &(b->aio_dev[3].pin));
 
     /* We skip the check UP pinctrl driver check*/
     const char* pinctrl_path = "/sys/bus/platform/drivers/gpio-aaeon";
