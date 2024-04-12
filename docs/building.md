@@ -20,7 +20,8 @@ what you'll need:
 For Debian-like distros the below command installs the basic set:
 
 ```bash
-sudo apt-get install git build-essential swig3.0 python-dev nodejs-dev cmake libjson-c-dev
+#sudo apt-get install git build-essential swig3.0 python-dev nodejs-dev cmake libjson-c-dev
+sudo apt-get install git build-essential swig3.0 python3-dev cmake libjson-c-dev
 ```
 
 Adjust as needed, for instance Python 3 builds will require `python3-dev`.
@@ -40,7 +41,7 @@ To build the documentation you'll also need:
 ~~~~~~~~~~~~~{.sh}
 mkdir build
 cd build
-cmake ..
+cmake .. -DBUILDSWIGNODE=OFF
 make
 ~~~~~~~~~~~~~
 
