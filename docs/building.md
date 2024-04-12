@@ -43,6 +43,8 @@ mkdir build
 cd build
 cmake .. -DBUILDSWIGNODE=OFF
 make
+
+sudo ln -s /usr/local/lib/libmraa.so.2.1.0 /usr/lib/x86_64-linux-gnu/libmraa.so.2
 ~~~~~~~~~~~~~
 
 If this goes wrong and you have all the dependencies installed, then please
