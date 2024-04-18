@@ -28,3 +28,5 @@ npm-debug.log
 # Visual Studio Code
 .vscode/
 /.cache/
+/cmake-build-debug/
+/.idea/
